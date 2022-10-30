@@ -5,20 +5,18 @@
  */
 package com.g5.g5web.service;
 
-import com.g5.g5web.dao.MesaDao;
 import com.g5.g5web.models.Mesa;
 import com.g5.g5web.models.Usuario;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Windows !0
  */
+@Service
 public class MesaServiceImpl implements MesaService{
-    
-     @Autowired
-    private MesaDao mesaDao;
 
       Mesa[] mesas = {
                 new Mesa("M0001","Mesa1"),
@@ -40,22 +38,23 @@ public class MesaServiceImpl implements MesaService{
 
     @Override
     public List<Mesa> listarMesa() {
-       return (List<Mesa>) mesaDao.findAll();
+
+        return null;
     }
 
     @Override
     public void guardar(Mesa mesa) {
-         mesaDao.save(mesa);
+
     }
 
     @Override
     public void eliminar(Mesa mesa) {
-       mesaDao.delete(mesa);
+
     }
 
     @Override
     public Mesa encontrarMesa(Mesa mesa) {
-      return mesaDao.findById(mesa.getNromesa()).orElse(null);
+        return null;
     }
     
 }
